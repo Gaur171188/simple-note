@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">SimpleNote</string>
+    <string name="notes">Notes</string>
+    <string name="filename">Filename</string>
+    <string name="enter_notes_here">Enter Notes Here</string>
+    <string name="read">Read</string>
+    <string name="write">Write</string>
+    <string name="delete">Delete</string>
+</resources>
