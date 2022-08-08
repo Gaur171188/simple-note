@@ -6,7 +6,9 @@ import java.io.File
 
 class InternalFileRepository(var context: Context) : NoteRepository {
     override fun addNote(note: Note) {
-        TODO("Not yet implemented")
+        context.openFileOutput(note.fileName, Context.MODE_PRIVATE).use {
+            it.write(note.noteText.toByteArray())
+        }
     }
 
     override fun getNote(fileName: String): Note {
