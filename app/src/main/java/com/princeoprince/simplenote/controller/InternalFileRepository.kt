@@ -20,7 +20,7 @@ class InternalFileRepository(var context: Context) : NoteRepository {
     }
 
     override fun deleteNote(fileName: String): Boolean {
-        TODO("Not yet implemented")
+        return noteFile(fileName).delete()
     }
 
     private fun noteFile(fileName: String): File = File(noteDirectory(), fileName)
