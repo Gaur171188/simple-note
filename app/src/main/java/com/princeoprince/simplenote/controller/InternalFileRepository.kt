@@ -12,7 +12,11 @@ class InternalFileRepository(var context: Context) : NoteRepository {
     }
 
     override fun getNote(fileName: String): Note {
-        TODO("Not yet implemented")
+        val note = Note(fileName, "")
+        context.openFileInput(fileName).use {
+            note.noteText = it.bufferedReader().use { it.readText() }
+        }
+        return note
     }
 
     override fun deleteNote(fileName: String): Boolean {
