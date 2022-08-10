@@ -2,7 +2,8 @@ package com.princeoprince.simplenote.controller
 
 import android.content.Context
 import com.princeoprince.simplenote.model.Note
-import java.io.File
+import com.princeoprince.simplenote.utils.noteDirectory
+import com.princeoprince.simplenote.utils.noteFile
 
 class InternalFileRepository(var context: Context) : NoteRepository {
     override fun addNote(note: Note) {
@@ -20,11 +21,6 @@ class InternalFileRepository(var context: Context) : NoteRepository {
     }
 
     override fun deleteNote(fileName: String): Boolean {
-        return noteFile(fileName).delete()
+        return noteFile(fileName, noteDirectory(context)).delete()
     }
-
-    private fun noteFile(fileName: String): File = File(noteDirectory(), fileName)
-
-    private fun noteDirectory(): String = context.filesDir.absolutePath
-
 }
