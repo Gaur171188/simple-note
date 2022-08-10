@@ -2,9 +2,7 @@ package com.princeoprince.simplenote.controller
 
 import android.content.Context
 import android.os.Environment
-import android.util.Log
 import com.princeoprince.simplenote.model.Note
-import com.princeoprince.simplenote.utils.noteDirectory
 import com.princeoprince.simplenote.utils.noteFile
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -27,7 +25,8 @@ class ExternalFileRepository(var context: Context) : NoteRepository {
     }
 
     override fun deleteNote(fileName: String): Boolean {
-        TODO("Not yet implemented")
+        return isExternalStorageWritable() &&
+                noteFile(fileName, context.getExternalFilesDir(null).toString()).delete()
     }
 
     private fun isExternalStorageWritable() : Boolean =
