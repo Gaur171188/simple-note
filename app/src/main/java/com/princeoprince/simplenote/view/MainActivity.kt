@@ -2,6 +2,7 @@ package com.princeoprince.simplenote.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.princeoprince.simplenote.controller.ExternalFileRepository
 import com.princeoprince.simplenote.databinding.ActivityMainBinding
 import com.princeoprince.simplenote.controller.InternalFileRepository
 import com.princeoprince.simplenote.controller.NoteRepository
@@ -10,7 +11,8 @@ import com.princeoprince.simplenote.utils.showToast
 
 class MainActivity : AppCompatActivity() {
 
-    private val repo: NoteRepository by lazy { InternalFileRepository(this) }
+//    private val repo: NoteRepository by lazy { InternalFileRepository(this) }
+    private val repo: NoteRepository by lazy { ExternalFileRepository(this) }
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
