@@ -18,3 +18,4 @@ fun isExternalStorageWritable() : Boolean =
 fun isExternalStorageReadable() : Boolean =
     Environment.getExternalStorageState() in
             setOf(Environment.MEDIA_MOUNTED, Environment.MEDIA_MOUNTED_READ_ONLY)
+
