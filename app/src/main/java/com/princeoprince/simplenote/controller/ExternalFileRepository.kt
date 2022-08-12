@@ -1,8 +1,9 @@
 package com.princeoprince.simplenote.controller
 
 import android.content.Context
-import android.os.Environment
 import com.princeoprince.simplenote.model.Note
+import com.princeoprince.simplenote.utils.isExternalStorageReadable
+import com.princeoprince.simplenote.utils.isExternalStorageWritable
 import com.princeoprince.simplenote.utils.noteFile
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -28,11 +29,4 @@ class ExternalFileRepository(var context: Context) : NoteRepository {
         return isExternalStorageWritable() &&
                 noteFile(fileName, context.getExternalFilesDir(null).toString()).delete()
     }
-
-    private fun isExternalStorageWritable() : Boolean =
-        Environment.getExternalStorageState() == Environment.MEDIA_MOUNTED
-
-    private fun isExternalStorageReadable() : Boolean =
-        Environment.getExternalStorageState() in
-                setOf(Environment.MEDIA_MOUNTED, Environment.MEDIA_MOUNTED_READ_ONLY)
 }
