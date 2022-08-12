@@ -1,7 +1,9 @@
 package com.princeoprince.simplenote.view
 
+import android.content.res.Resources
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.princeoprince.simplenote.R
 import com.princeoprince.simplenote.controller.EncryptedFileRepository
 import com.princeoprince.simplenote.controller.ExternalFileRepository
 import com.princeoprince.simplenote.databinding.ActivityMainBinding

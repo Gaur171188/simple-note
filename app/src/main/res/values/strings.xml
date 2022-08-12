@@ -1,9 +1,12 @@
 <resources>
-    <string name="app_name">SimpleNote</string>
+    <string name="app_name">Simple Note</string>
     <string name="notes">Notes</string>
     <string name="filename">Filename</string>
     <string name="enter_notes_here">Enter Notes Here</string>
     <string name="read">Open</string>
     <string name="write">Save</string>
     <string name="delete">Delete</string>
+    <string name="title_activity_splash">FullscreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 </resources>
